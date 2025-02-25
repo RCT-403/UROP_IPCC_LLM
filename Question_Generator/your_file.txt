@@ -1,6 +1,5 @@
 The observed decrease of Arctic sea ice area is a  key indicator of
-large-scale climate change.
-The SROCC (Meredith et al., 2019) assesses that sea ice extent, which
+large-scale climate change. The SROCC (Meredith et al., 2019) assesses that sea ice extent, which
 is the total area of all grid cells with at least 15% sea ice concentration,
 has declined since 1979 in each month of the year (very high
 confidence). In contrast to SROCC, we assess changes in sea ice area
