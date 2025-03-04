@@ -22,6 +22,8 @@ data = json.dumps({
     "messages": [
         {
             "role": "user",
+            # Try to limit the length of the question
+            # and focus on simple questions/responses
             "content": f"Based on the following text, generate an insightful question that encourages deeper thinking about the topic: {tokenized_string}"  # Use the tokenized content here
         }
     ],
@@ -31,7 +33,7 @@ data = json.dumps({
 response = requests.post(
     url="https://openrouter.ai/api/v1/chat/completions",
     headers={
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "Content-Type": "application/json",
     },
     data=data
