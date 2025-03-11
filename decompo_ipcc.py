@@ -126,13 +126,13 @@ def extract_content(report: Section, pdf_path: str):
     data = pymupdf4llm.to_markdown(pdf_path, page_chunks=True, force_text=True) #, pages=list(range(1, 50))
 
     # search for the section titles and consequently extract the content
-    header_pattern = re.compile(r'(\d+\.\d+\.\d+\.\d+(\.\d+)*)')
+    header_pattern = re.compile(r'(\d+\.\d+\.\d+\.\d+(\.\d+)*) [A-Z]')
 
     current_section = None
 
     for page in data: # avoid memory issues
         mdtext = page["text"]
-        for line in mdtext.split("\n"): #could be slow
+        for line in mdtext.split("\n"): # could be slow
             match = header_pattern.match(line)
             if match: 
                 # If there's a current section, add it to the parent section
@@ -183,7 +183,7 @@ def build_report(pdf_path: str):
     return report
 
 def main(): 
-    pdf_path = "./data/IPCC AR6 Chapter 2 Climate System.pdf"
+    pdf_path = "./data/raw/IPCC AR6 Chapter 2.pdf"
 
     time_start = time.time()
     report = build_report(pdf_path)
