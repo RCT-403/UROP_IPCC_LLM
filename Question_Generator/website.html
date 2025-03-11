@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Rating Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .rating-btn {
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .rating-btn:active {
+            transform: scale(0.95);
+        }
+        .rating-btn.selected {
+            background-color: #5D5CDE;
+            color: white;
+        }
+        
+        /* Dark mode styles */
+        .dark .rating-btn.selected {
+            background-color: #7776e7;
+        }
+        
+        .dark .collected-data {
+            background-color: #2d2d2d;
+            border-color: #444;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white dark:bg-gray-900 dark:text-white transition-colors duration-200">
+    <div class="container mx-auto p-4 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center my-6 text-primary dark:text-purple-300">Q&A Rating Generator</h1>
+        
+        <!-- Start screen -->
+        <div id="start-screen" class="text-center p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md">
+            <p class="mb-6 te   xt-gray-700 dark:text-gray-300">
+                Click the Start button to begin generating random Q&A pairs. Rate each pair and collect data for analysis.
+            </p>
+            <button id="start-btn" class="px-6 py-3 bg-primary hover:bg-purple-700 text-white font-semibold rounded-lg shadow transition-colors">
+                Start Generating Q&A Pairs
+            </button>
+        </div>
+        
+        <!-- Q&A display area (initially hidden) -->
+        <div id="qa-container" class="hidden mt-8">
+            <div id="loading-indicator" class="text-center py-6">
+                <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">Generating Q&A pair...</p>
+            </div>
+            
+            <div id="qa-content" class="hidden">
+                <div class="mb-6 p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                    <h2 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Question:</h2>
+                    <div id="question" class="text-lg"></div>
+                </div>
+                
+                <div class="mb-6 p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                    <h2 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Answer:</h2>
+                    <div id="answer" class="text-lg"></div>
+                </div>
+                
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold mb-3 text-center">Rate this Q&A Pair</h2>
+                    <div class="flex justify-center gap-2 flex-wrap">
+                        <button class="rating-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-rating="1">1</button>
+                        <button class="rating-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-rating="2">2</button>
+                        <button class="rating-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-rating="3">3</button>
+                        <button class="rating-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-rating="4">4</button>
+                        <button class="rating-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-rating="5">5</button>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-4 mb-8">
+                    <button id="submit-rating" class="px-5 py-2 bg-primary hover:bg-purple-700 text-white font-semibold rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed transition-colors" disabled>
+                        Submit & Next
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collected data section (initially hidden) -->
+        <div id="data-section" class="hidden mt-8 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-semibold mb-3">Collected Data</h2>
+            <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">Copy this data for your records:</p>
+            <pre id="collected-data" class="collected-data p-3 bg-gray-100 rounded-md border border-gray-300 overflow-x-auto text-xs sm:text-sm max-h-60 overflow-y-auto"></pre>
+            <div class="mt-4 flex justify-between">
+                <button id="copy-data" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 font-medium rounded-md transition-colors">
+                    Copy Data
+                </button>
+                <button id="new-session" class="px-4 py-2 bg-primary hover:bg-purple-700 text-white font-medium rounded-md transition-colors">
+                    Start New Session
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+        
+        // Store collected data
+        const collectedData = [];
+        let currentQA = null;
+        let selectedRating = null;
+        
+        // DOM elements
+        const startScreen = document.getElementById('start-screen');
+        const qaContainer = document.getElementById('qa-container');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const qaContent = document.getElementById('qa-content');
+        const questionEl = document.getElementById('question');
+        const answerEl = document.getElementById('answer');
+        const ratingButtons = document.querySelectorAll('.rating-btn');
+        const submitButton = document.getElementById('submit-rating');
+        const dataSection = document.getElementById('data-section');
+        const collectedDataEl = document.getElementById('collected-data');
+        
+        // Register handler for bot responses
+        window.Poe.registerHandler("qa-handler", (result) => {
+            const msg = result.responses[0];
+            
+            if (msg.status === "error") {
+                loadingIndicator.classList.add('hidden');
+                qaContent.classList.remove('hidden');
+                questionEl.innerHTML = "Error generating Q&A pair. Please try again.";
+                answerEl.innerHTML = msg.statusText || "Unknown error";
+                return;
+            }
+            
+            if (msg.status === "complete") {
+                try {
+                    // Parse the JSON response
+                    const content = msg.content.replace(/```json|```/g, '').trim();
+                    const qaData = JSON.parse(content);
+                    
+                    currentQA = qaData;
+                    
+                    // Update the UI with the Q&A pair
+                    questionEl.innerHTML = marked.parse(qaData.question);
+                    answerEl.innerHTML = marked.parse(qaData.answer);
+                    
+                    // Show the Q&A content
+                    loadingIndicator.classList.add('hidden');
+                    qaContent.classList.remove('hidden');
+                } catch (error) {
+                    console.error("Failed to parse Q&A data:", error);
+                    loadingIndicator.classList.add('hidden');
+                    qaContent.classList.remove('hidden');
+                    questionEl.innerHTML = "Error parsing Q&A data. Please try again.";
+                    answerEl.innerHTML = "Response format error. Raw response: " + msg.content;
+                }
+            }
+        });
+        
+        // Generate a new Q&A pair
+        async function generateQAPair() {
+            qaContent.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            resetRatingButtons();
+            
+            try {
+                await window.Poe.sendUserMessage(
+                    "@Claude-3.7-Sonnet Generate a random knowledge-testing question and its answer. Make the question challenging but answerable. Provide ONLY raw JSON in your response with no explanations, additional text, or code block formatting (no ```). The JSON should have the format: {\"question\": \"Your question here\", \"answer\": \"Your detailed answer here\"}",
+                    {
+                        handler: "qa-handler",
+                        stream: false,
+                        openChat: false
+                    }
+                );
+            } catch (err) {
+                loadingIndicator.classList.add('hidden');
+                qaContent.classList.remove('hidden');
+                questionEl.innerHTML = "Error generating Q&A pair:";
+                answerEl.innerHTML = err.message || "Unknown error";
+            }
+        }
+        
+        // Reset rating buttons
+        function resetRatingButtons() {
+            ratingButtons.forEach(btn => btn.classList.remove('selected'));
+            selectedRating = null;
+            submitButton.disabled = true;
+        }
+        
+        // Update collected data display
+        function updateCollectedDataDisplay() {
+            if (collectedData.length > 0) {
+                const dataJson = JSON.stringify(collectedData, null, 2);
+                collectedDataEl.textContent = dataJson;
+                dataSection.classList.remove('hidden');
+            } else {
+                dataSection.classList.add('hidden');
+            }
+        }
+        
+        // Event Listeners
+        document.getElementById('start-btn').addEventListener('click', () => {
+            startScreen.classList.add('hidden');
+            qaContainer.classList.remove('hidden');
+            // generateQAPair();
+        });
+        
+        // Handle rating button clicks
+        ratingButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove selected class from all buttons
+                ratingButtons.forEach(b => b.classList.remove('selected'));
+                
+                // Add selected class to clicked button
+                btn.classList.add('selected');
+                
+                // Update selected rating and enable submit button
+                selectedRating = parseInt(btn.dataset.rating);
+                submitButton.disabled = false;
+            });
+        });
+        
+        // Handle submit button click
+        submitButton.addEventListener('click', () => {
+            if (currentQA && selectedRating) {
+                // Add the current Q&A pair and rating to the collected data
+                collectedData.push({
+                    question: currentQA.question,
+                    answer: currentQA.answer,
+                    rating: selectedRating,
+                    timestamp: new Date().toISOString()
+                });
+                
+                // Update the collected data display
+                updateCollectedDataDisplay();
+                
+                // Generate a new Q&A pair
+                generateQAPair();
+            }
+        });
+        
+        // Handle copy data button click
+        document.getElementById('copy-data').addEventListener('click', () => {
+            const dataText = collectedDataEl.textContent;
+            navigator.clipboard.writeText(dataText)
+                .then(() => {
+                    const copyBtn = document.getElementById('copy-data');
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy data:', err);
+                    alert('Failed to copy data. Please select and copy manually.');
+                });
+        });
+        
+        // Handle new session button click
+        document.getElementById('new-session').addEventListener('click', () => {
+            // Clear collected data
+            collectedData.length = 0;
+            updateCollectedDataDisplay();
+            
+            // Reset UI
+            resetRatingButtons();
+            
+            // Generate a new Q&A pair
+            generateQAPair();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+Surface temperature change is the aspect of climate in which the
+climate research community has had most confidence over past IPCC
+assessment reports. This confidence comes from the availability of longer
+observational records compared to other indicators, a large response to
+anthropogenic forcing compared to variability in the global mean, and
+a strong theoretical understanding of the key thermodynamics driving
+its changes (Collins et al., 2010; Shepherd, 2014). The AR5 assessed 
+that it was extremely likely that human activities had caused more than 
+half of the observed increase in global mean surface temperature from
+1951 to 2010, and virtually certain that internal variability alone could
+not account for the observed global warming since 1951 (Bindoff et al.,
+2013). The AR5 also assessed with very high confidence that climate
+models reproduce the general features of the global-scale annual
+mean surface temperature increase over 1850–2011 and with high
+confidence that models reproduce global and Northern Hemisphere
+temperature variability on a wide range of time scales (Flato et al.,
+2013). This section assesses the performance of the new generation
+CMIP6 models (see Table AII.5) in simulating the patterns, trends, and
+variability of surface temperature, and the evidence from detection
+and attribution studies of human influence on large-scale changes in
+surface temperature.
+To be fit for detecting and attributing human influence on globallyaveraged surface temperatures, climate models need to represent, based
+on physical principles, both the response of surface temperature  to
+external forcings and the internal variability in surface temperature
+over various time scales. This section assesses the performance of
+those aspects in the latest generation CMIP6 climate models. See
+Section 3.8 for evaluation at continental scales, Chapter 10 for model
+evaluation in the context of regional climate information, and the Atlas
+for region-by-region assessments of model performance.
+Reconstructions of past temperature from paleoclimate proxies
+(Section 2.3.1.1 and Cross-Chapter Box  2.1) have been used to
+evaluate modelled past climate temperature change patterns. The
+AR5 found that CMIP5 (Taylor et al., 2012) models were able to
+reproduce the large-scale patterns of temperature during the Last
+Glacial Maximum (LGM) (Flato et al., 2013) and simulated a polar
+amplification broadly consistent with reconstructions for warm
+(Pliocene and Eocene) and cold (LGM) periods (Masson-Delmotte
+et al., 2013). Since AR5, a better understanding of temperature
+proxies and their uncertainties and in some cases the forcing applied
+to model simulations has led to better agreement between models
+and reconstructions over a wide range of past climates. For the
+Pliocene and Eocene warm periods, understanding of uncertainties in
+temperature proxies (Hollis et al., 2019; McClymont et al., 2020) and
+the boundary conditions used in climate simulations (Haywood et al.,
+2016; Lunt et al., 2017) has improved, and some models now agree
+better with temperature proxies for these time periods compared
+to models assessed in AR5 (Sections 7.4.4.1.2, 7.4.4.2.2 and CrossChapter Box 2.4; Zhu et al., 2019; Haywood et al., 2020; Lunt et al.,
+2021). For the Last Interglacial (LIG), improved temporal resolution of
+temperature proxies (Capron et al., 2017) and better appreciation of
+the importance of freshwater forcing (Stone et al., 2016) have clarified
+the reasons behind apparent model-data inconsistencies. Regional
+LIG temperature responses simulated by CMIP6 are within the
+uncertainty ranges of reconstructed temperature responses, except
+in regions where unresolved changes in regional ocean circulation,
+meltwater, or vegetation changes may cause model mismatches
+(Otto-Bliesner et al., 2021). For the LGM, the CMIP5 and CMIP6
+ensembles compare similarly to new sea surface temperature (SST)
+and surface air temperature (SAT) proxy reconstructions (Figure 3.2a;
+Cleator et al., 2020; Tierney et al., 2020b). The very cold CMIP6
+LGM simulation by the Community Earth System Model Version 2.1
+(CESM2.1) is an exception related to the high equilibrium climate
+sensitivity (ECS) of that model (Section 7.5.6; Kageyama et al., 2021a;
+Zhu et al., 2021). Figure 3.2a illustrates the wide range of simulated
+global LGM temperature responses in both ensembles. CMIP6 models
+tend to underestimate the cooling over land, but agree better with
+oceanic reconstructions. For the mid-Holocene, the regional biases
+found in CMIP5 simulations are similar to those in pre-industrial and
+historical simulations (Harrison et al., 2015; Ackerley et al., 2017),
+suggesting common causes. CMIP5 models underestimate Arctic
+warming in the mid-Holocene (Yoshimori and Suzuki, 2019). CMIP6
+models simulate a mid-latitude, subtropical, and tropical cooling
+compared to the pre-industrial period, whereas temperature proxies
+indicate a warming (see Section 2.3.1.1.2; Brierley et al., 2020;
+Kaufman et al., 2020), although accounting for seasonal effects in the
+proxies may reduce the discrepancy (Bova et al., 2021). Over the past
+millennium, reconstructed and simulated temperature anomalies,
+internal variability, and forced response agree well over Northern
+Hemisphere continents, but those statistics disagree strongly in
+the Southern Hemisphere, where models seem to overestimate
+the response (PAGES 2k-PMIP3 group, 2015). That disagreement is
+partly explained by the lower quality of the reconstructions in the
+Southern Hemisphere, but model and/or forcing errors may also
+contribute (Neukom et al., 2018). Figure  3.2b shows that land/sea
+warming contrast behaves coherently in model simulations across
+multiple periods, with a slight non-linearity in land warming due to
+a smaller contribution of snow cover to temperature response in
+warmer climates. A multivariate assessment of paleoclimate model
+simulations is carried out in Section 3.8.2.
+For the historical period, AR5 assessed with very high confidence
+that CMIP5 models reproduced observed large-scale mean surface
+temperature patterns, although errors of several degrees appear in
+elevated regions, like the Himalayas and Antarctica, near the edge
+of the sea ice in the North Atlantic, and in upwelling regions. This
+assessment is updated here for the CMIP6 simulations. Figure  3.3
+shows the annual mean surface air temperature at 2 m for the
+CMIP5 and CMIP6 multi-model means, both compared to the fifth
+generation European Centre for Medium-Range Weather Forecasts
+(ECMWF) atmospheric reanalysis (ERA5; Section 1.5.2) for the
+period 1995–2014. The distribution of biases is similar in CMIP5 and
+CMIP6 models, as already noted by several studies (Crueger et al.,
+2018; Găinuşă-Bogdan et al., 2018; Kuhlbrodt et al., 2018; Lauer
+et al., 2018). Arctic temperature biases seem more widespread in
+both ensembles than assessed at the time of AR5. The fundamental
+causes of temperature biases remain elusive, with errors in clouds
+(Lauer et al., 2018), ocean circulation (Kuhlbrodt et al., 2018), winds
+(Lauer et al., 2018), and surface energy budget (Hourdin et al., 2015;
+Séférian et al., 2016; Găinuşă-Bogdan et al., 2018) being frequently
+cited candidates. Increasing horizontal resolution shows promise for
+decreasing long-standing biases in surface temperature over large
+regions (Bock et al., 2020). Panels e and f of Figure 3.3 show that
+biases in the mean High-Resolution Model Intercomparison Project
+(HighResMIP, Haarsma et al., 2016) models (see also Table AII.6) are
+smaller than those in the mean of the corresponding lower-resolution
+versions of the same models simulating the same period (see also
+Section 3.8.2.2). However, the bias reduction is modest (Palmer and Stevens, 2019). In addition, the biases of the limited number of models
+participating in HighResMIP are not entirely representative of overall
+CMIP6 biases, especially in the Southern Ocean, as  indicated by
+comparing panels b and f of Figure 3.3.
+The AR5 assessed with very high confidence that models reproduce
+the general history of the increase in global-scale annual mean
+surface temperature since the year 1850, although AR5 also reported
+that an observed reduction in the rate of warming over the period
+1998–2012 was not reproduced by the models (Cross-Chapter
+Box 3.1; Flato et al., 2013). Figure 3.2c and Figure 3.4 show time series
+of anomalies in annually and globally averaged surface temperature
+simulated by CMIP5 and CMIP6 models for the past millennium
+and the period 1850 to 2020, respectively, with the baseline set
+to 1850–1900 (see Section 1.4.1). As also indicated by Figure 3.4,
+the spread in simulated absolute temperatures is large (Palmer and
+Stevens, 2019). However, the discussion is based on temperature
+anomaly time series instead of absolute temperatures because our
+focus is on evaluation of the simulation of climate change in these
+models, and also because anomalies are more uniformly distributed
+and are more easily deseasonalized to isolate long-term trends (see
+Section 1.4.1). CMIP6 models broadly reproduce surface temperature
+variations over the past millennium, including the cooling that follows
+periods of intense volcanism (medium confidence) (Figure  3.2c).
+Simulated GMST anomalies are well within the uncertainty range
+of temperature reconstructions (medium confidence) since about
+the year 1300, except for some short periods immediately following
+large volcanic eruptions, for which simulations driven by different
+forcing datasets disagree (Figure 3.2c). Before the year 1300, larger
+disagreements between models and temperature reconstructions
+are expected because forcing and temperature reconstructions are
+increasingly uncertain further back in time, but specific causes have
+not been identified conclusively (Ljungqvist et al., 2019; PAGES 2k
+Consortium, 2019) (medium confidence). For the historical period,
+results for CMIP6 shown in Figure 3.4 suggest that the qualitative
+history of surface temperature increase is well reproduced, including
+the increase in warming rates beginning in the 1960s and the
+temporary cooling that follows large volcanic eruptions.
+Although virtually all CMIP6 modelling groups report improvements
+in their model’s ability to simulate current climate compared to the
+CMIP5 version (Gettelman et al., 2019; Golaz et al., 2019; Mauritsen
+et al., 2019; Swart et al., 2019; Voldoire et al., 2019b; T. Wu et al.,
+2019b; Bock et al., 2020; Boucher et al., 2020; Dunne et al., 2020), it
+does not necessarily follow that the simulation of temperature trends
+is also improved (Bock et al., 2020; Fasullo et al., 2020). The CMIP6
+multi-model ensemble encompasses observed warming and the
+multi-model mean tracks those observations within 0.2°C over most
+of the historical period. Figure 3.4 confirms the findings of Papalexiou
+et al. (2020), who highlighted based on 29 CMIP6 models that most
+models replicate the period of slow warming  between 1942 and
+1975 and the late twentieth century warming (1975–2014). The
+CMIP6 multi-model mean is cooler over the period 1980–2000 than
+both observations and CMIP5 (Figure  3.4; Bock et al., 2020; Flynn
+and Mauritsen, 2020; Gillett et al., 2021). Biases of several tenths
+of a degree in some CMIP6 models over that period may be due
+to an overestimate in aerosol radiative forcing (Sections 6.3.5 and
+7.3.3, and Figure 6.8; Andrews et al., 2020; Dittus et al., 2020; Flynn
+and Mauritsen, 2020). Papalexiou et al. (2020), Tokarska et al. (2020)
+and Stolpe et al. (2021) all report that CMIP6 models on average
+overestimate warming from the 1970s or 1980s to the 2010s,
+although quantitative conclusions depend on which observational
+dataset is compared against (see also Table 2.4). However, Figure 3.4,
+which includes a larger number of models than available to those
+studies, indicates that the CMIP6 multi-model mean tracks observed
+warming better than the CMIP5 multi-model mean after the year
+2000. The CMIP6 multi-model mean GSAT warming between 1850–
+1900 and 2010–2019 and associated 5–95% range is 1.09 [0.66
+to 1.64]  °C. Cross-Chapter Box  2.3 assessed GSAT warming over
+the same period at 1.06 [0.88 to 1.21] °C. So some CMIP6 models
+simulate a warming that is smaller than the assessed observed range,
+and other CMIP6 models simulate a warming that is larger. That
+overestimated warming may be an early symptom of overestimated
+ECS in some CMIP6 models (Section 7.5.6; Meehl et al., 2020; Schlund
+et al., 2020), and has implications for projections of GSAT changes
+(Chapter 4; Liang et al., 2020; Nijsse et al., 2020; Tokarska et al., 2020;
+Ribes et al., 2021). In some models, a large ECS and a strong aerosol
+forcing lead to too large a mid-20th century cooling followed by
+overestimated warming rates in the late 20th century when aerosol
+emissions decrease (Golaz et al., 2019; Flynn and Mauritsen, 2020).
+Temperature biases are driven by both model physics and prescribed
+forcing, which is a challenge for model development.
+Chylek et al. (2020) argue that CMIP5 models overestimate the
+temperature response to volcanic eruptions. Lehner et al. (2016),
+Rypdal (2018) and Stolpe et al. (2021) point instead to missed
+compensating effects on surface temperature change associated
+with internal variability in the El Niño–Southern Oscillation (ENSO)
+or the Atlantic Multi-decadal Oscillation (AMO). An alternative view
+sees those ENSO and AMO responses as expressions of changes in
+climate feedbacks driven by the geographical pattern of SST changes
+(Andrews et al., 2018). At least one model is able to reproduce such
+pattern effects (Gregory and Andrews, 2016). Errors in the volcanic
+forcing prescribed in simulations, including for CMIP6 (Rieger et al.,
+2020), also introduce differences with the observed temperature
+response, independently of the quality of the model physics. In
+addition, comparisons of the modelled temperature  response
+to large eruptions over the past millennium to temperature
+reconstructions based on tree rings show a much better agreement
+(Lücke et al., 2019; F. Zhu et al., 2020) than comparisons to the annual,
+multi-temperature proxy reconstructions shown in Figure 3.2c. These
+considerations, and Figures 3.2c and 3.4, suggest that CMIP6 models
+do not systematically overestimate the cooling that follows large
+volcanic eruptions (see also Cross-Chapter Box 4.1).
+When interpreting model simulations of historical temperature change,
+it is important to keep in mind that some models are tuned towards
+representing the observed trend in global mean surface temperature
+over the historical period (Hourdin et al., 2017). In Figure  3.4 the
+CMIP6 models that are documented to have been tuned to reproduce
+observed warming, typically by tuning aerosol forcing or factors
+that influence the model’s ECS, are marked with an asterisk. Such
+tuning of a model can strongly impact its temperature projections
+(Mauritsen and Roeckner, 2020). However, Bock et al. (2020) reported 
+that there is no statistically significant difference in multi-model
+mean GSAT between the models that had been tuned based on
+observed warming compared to those which had not. Moreover,
+only two of thirteen models used for the Detection and Attribution
+Model Intercomparison Project (DAMIP) simulations on which CMIP6
+attribution studies are based were tuned towards historical warming
+(Bock et al., 2020; Gillett et al., 2021). Further, tuning is done on
+globally averaged quantities, so does not substantially change the
+spatio-temporal pattern of response on which many regressionbased attribution studies are based (Bock et al., 2020). Therefore, we
+assess with high confidence that the tuning of a small number of
+CMIP6 models to observed warming has not substantially influenced
+attribution results assessed in this chapter.
+The reliance of detection and attribution studies on climate models
+(see  Section 3.2) requires that those models simulate realistic
+statistics of internal variability on multi-decadal time scales. An
+incorrect estimate of variability in models would affect confidence 
+in the conclusions from detection and attribution. The AR5 found
+that CMIP5 models simulate realistic variability in global-mean
+surface temperature on decadal time scales, with variability on
+multi-decadal time scales being more difficult to evaluate because
+of the short observational record (Flato et al., 2013). Since AR5, new
+work has characterized the contributions of variability in different
+ocean areas to SST variability, with tropical modes of variability like
+ENSO dominant on time scales of five to ten years, while longer time
+scales see the variance maxima move poleward to the North Atlantic,
+North Pacific, and Southern oceans (Monselesan et al., 2015). There
+may, however, be sizeable, two-way interdependencies between
+ENSO and sea surface temperature variability in different basins
+(Kumar et al., 2014; Cai et al., 2019), and ENSO’s influence on global
+surface temperature variability may not be confined only to decadal
+time scales (Triacca et al., 2014). Studies based on large ensembles
+of 20th and 21st century climate change simulations confirm that
+internal variability has a substantial influence on global warming
+trends over periods shorter than 30–40 years (Kay et al., 2015; Dai
+and Bloecker, 2019). Although the equatorial Pacific seems to be the
+main source of internal variability on decadal time scales, Brown
+et al. (2016a) linked diversity in modelled oceanic convection, sea
+ice, and energy budget in high-latitude regions to overall diversity in
+modelled internal variability.
+Interest in internal variability since the publication of AR5 stems in
+part from its importance in understanding the slower global surface
+temperature warming over the early 21st century (see Cross-Chapter
+Box 3.1). Evidence coming mostly from paleo studies is mixed on
+whether CMIP5 models underestimate decadal and multi-decadal
+variability in global mean temperature. Schurer et al. (2013) found
+good agreement between internal variability derived from paleo
+reconstructions, estimated as the fraction of variance that is not
+explained by forced responses, and modelled variability, although
+the subset of CMIP5 models they used may have been associated
+with larger variability than the full CMIP5 ensemble. PAGES 2k
+Consortium (2019) found that the largest 51-year trends in both
+reconstructions of global mean temperature and fully forced climate
+simulations over the period 850 to 1850 were almost identical. Zhu
+et al. (2019) showed agreement in the modelled and reconstructed
+temporal spectrum of global surface temperatures on annual to
+multi-millennial time scales. However, they suggest that decadal- to
+centennial variability is partly forced by slow orbital changes that
+predate the last millennium. This is consistent with Gebbie and
+Huybers (2019), who showed that the deep ocean has been out
+of equilibrium over that period. Laepple and Huybers (2014) found
+good agreement between modelled and proxy-derived decadal
+ocean temperature variability, but underestimates of variance by
+models by at least a factor of ten at centennial time scales because
+models underestimate the difference between the warm and cold
+periods of the last millennium. Parsons et al. (2020) found that some
+CMIP6 models exhibit much higher multi-decadal variability in GSAT
+than CMIP5 models, with indications that variability in these models
+s also higher than that from proxy reconstructions. CMIP6 models
+may not share the underestimation by CMIP5 models of variability
+in decadal to multi-decadal modes of variability, such as Pacific
+Decadal Variability (Section 3.7.6; England et al., 2014; Thompson
+et al., 2014; Schurer et al., 2015) and Atlantic Multi-decadal
+Variability (AMV), which may be partly forced, (see Section 3.7.7)
+but this assessment is limited by the small number of available
+studies. For the Southern Hemisphere, Hegerl et al. (2018) found an
+instance of internal variability in the early 20th century larger than
+that modelled, but indicated that could be an observational issue.
+Friedman et al. (2020) found biases in interhemispheric SST contrast
+in some models that may be consistent with underestimated cooling
+after early-20th century eruptions or underestimated Pacific Decadal
+Variability, but could also be due to an imperfect separation between
+internal variability and forced signal in the observations. Figure 3.2c,
+updated from PAGES 2k Consortium (2019), compares modelled
+temperatures to reconstructions over the last millennium. It indicates
+that models reproduce the observed variability well, at least for the
+time scales between 20 and 50 years that paleo reconstructions
+typically resolve and that the figure represents. In summary, decadal
+GMST variability simulated in CMIP6 models spans the range of
+residual decadal variability in large-scale reconstructions (medium
+evidence, low agreement).
+In addition, new literature suggests that anthropogenic forcing
+itself may locally increase or decrease variability in surface
+temperatures (Screen et al., 2014; Qian and Zhang, 2015; Brown
+et al., 2017; Park et al., 2018; Santer et al., 2018; Weller et al.,
+2020). These studies imply limitations in the use of pre-industrial
+control simulations to quantify the role of unforced variability over
+the historical period. Some recent attribution studies (Gillett et al.,
+2021; Ribes et al., 2021) have estimated variability from ensembles
+of forced simulations instead, which would be expected to resolve
+any such changes in variability.
+Figure  3.5 shows the standard deviation of zonal-mean surface
+temperature in CMIP6 pre-industrial control simulations and observed
+temperature datasets. Results are consistent with those based
+on CMIP5 models, which showed the largest model spread where
+variability is also large, in the tropics and mid- to high latitudes (Flato
+et al., 2013). Modelled variability is within a factor two of observed
+variability over most of the globe. The apparent overestimation of
+high latitude variability in models compared to observations may
+be due to interpolation and infilling over data sparse high latitude
+regions in the observational products shown here (Jones, 2016).
+The previous paragraph took an ensemble-mean view of model
+performance, but individual models disagree on unforced variability.
+Figure 3.6 illustrates the large differences in GSAT variability in unforced
+CMIP6 pre-industrial control simulations, following the method of
+Parsons et al. (2020). Surface temperatures in pre-industrial conditions
+are especially variable in the ten models highlighted in Figure 3.6a,
+and some models substantially exceed the variability seen in CMIP5
+models (Parsons et al., 2020). Figure 3.6b shows that the distribution
+of warming trends simulated by CMIP6 models in historical simulations
+is clearly distinct from that simulated in unforced pre-industrial control
+simulations. Still, the unforced variability of the five most variable
+models approaches half that observed over the historical period
+under anthropogenically forced conditions (Figure 3.6c; Parsons et al.,
+2020; Ribes et al., 2021). For  the Centre National de la Recherche
+Météorologique (CNRM) models, which are among the most variable,
+the large, low-frequency variability is attributed to strong simulated
+Atlantic Multi-decadal Variability (Séférian et al., 2019; Voldoire et al.,
+2019b), which is difficult to rule out because of the short observational
+record (Section 3.7.7; Cassou et al., 2018). But, importantly, patterns
+of temperature variability simulated by even the most variable models
+differ from the pattern of forced temperature change (Parsons et al.,
+2020). Taken together, this discussion and Figures  3.2, 3.5 and 3.6
+indicate that the statistics of internal variability in models compare
+well in most cases to observational estimates and temperature proxy
+reconstructions, though some CMIP6 models appear to have higher
+multi-decadal variability than CMIP5 models or proxy reconstructions.
+When used in attribution studies, models with overestimated
+variability would increase estimated uncertainties and make results
+statistically conservative.
+In summary, there is high confidence that CMIP6 models reproduce
+observed large-scale mean surface temperature patterns and internal
+variability as well as their CMIP5 predecessors, but with little evidence
+for reduced biases. CMIP6 models also reproduce historical GSAT
+changes similarly to their CMIP5 counterparts (medium confidence).
+However, in spite of model imperfections, there is very high confidence
+that biases in surface temperature trends and variability simulated
+by the CMIP5 and CMIP6 ensembles are small enough to support
+detection and attribution of human-induced warming. Looking at periods preceding the instrumental record, AR5 assessed
+with high confidence that the 20th century annual mean surface
+temperature warming reversed a 5000-year cooling trend in Northern
+Hemisphere mid- to high latitudes caused by orbital forcing, and
+attributed the reversal to anthropogenic forcing with high confidence
+(see also Section 2.3.1.1). Since AR5, the combined response to solar,
+volcanic and greenhouse gas forcing was detected in all Northern
+Hemisphere continents (PAGES 2k-PMIP3 group, 2015) over the
+period 864 to 1840. In contrast, the effect of those forcings was not
+detectable in the Southern Hemisphere (Neukom et al., 2018). Global
+and Northern Hemisphere temperature changes from reconstructions
+over this period have been attributed mostly to volcanic forcing
+(Schurer et al., 2014; McGregor et al., 2015; Otto-Bliesner et al., 2016;
+PAGES 2k Consortium, 2019; Büntgen et al., 2020), with a smaller
+role for changes in greenhouse gas forcing, and solar forcing playing
+a minor role (Schurer et al., 2014; PAGES 2k Consortium, 2019).
+Focusing now on warming over the historical period, AR5 assessed
+that it was extremely likely that human influence was the dominant
+cause of the observed warming since the mid-20th century, and
+that it was virtually certain that warming over the same period
+could not be explained by internal variability alone. Since AR5 many
+new attribution studies of changes in global surface temperature
+have focused on methodological advances (see also Section 3.2).
+Those advances include better accounting for observational and
+model uncertainties, and internal variability (Ribes and Terray, 2013;
+Hannart, 2016; Ribes et al., 2017; Schurer et al., 2018); formulating
+the attribution problem in a counterfactual framework (Hannart and
+Naveau, 2018); and reducing the dependence of the attribution on
+uncertainties in climate sensitivity and forcing (Otto et al., 2015;
+Haustein et al., 2017, 2019). Studies now account for uncertainties
+in the statistics of internal variability, either explicitly (Hannart, 2016;
+Hannart and Naveau, 2018; Ribes et al., 2021) or implicitly (Ribes and
+Terray, 2013; Schurer et al., 2018; Gillett et al., 2021), thus addressing
+concerns about over-confident attribution conclusions. Accounting for
+observational uncertainty increases the range of warming attributable
+to greenhouse gases by only 10 to 30% (Jones and Kennedy, 2017;
+Schurer et al., 2018). While some attribution studies estimate
+attributable changes in globally-complete GSAT (Schurer et al., 2018;
+Gillett et al., 2021; Ribes et al., 2021), others attribute changes in
+observational GMST, but this makes little difference to attribution
+conclusions (Schurer et al., 2018). Moreover, based on a synthesis of
+observational and modelling evidence, Cross-Chapter Box 2.3 assesses
+that the current best estimate of the scaling factor between GMST and
+GSAT is one, and therefore attribution studies of GMST and GSAT are 
+here treated together in deriving assessed warming ranges. Studies
+also increasingly validate their multi-model approaches using imperfect
+model tests (Schurer et al., 2018; Gillett et al., 2021; Ribes et al., 2021).
+Alternative techniques, based purely on statistical or econometric
+approaches, without the need for climate modelling, have also been
+applied (Estrada et al., 2013; Stern and Kaufmann, 2014; Dergiades
+et al., 2016) and match the results of physically-based methods. The
+larger range of attribution techniques and improvements to those
+techniques increase confidence in the results compared to AR5.
+In contrast, studies published since AR5 indicate that closely
+constraining the separate contributions of greenhouse gas changes
+and aerosol changes to observed temperature changes remains
+challenging. Nonetheless, attribution of warming to greenhouse gas
+forcing has been found as early as the end of the 19th century (Schurer
+et al., 2014; Owens et al., 2017; PAGES 2k Consortium, 2019). Hegerl
+et al. (2019) found that volcanism cooled global temperatures by
+about 0.1°C between 1870 and 1910, then a lack of volcanic activity
+warmed temperatures by about 0.1°C between 1910 and 1950,
+with anthropogenic aerosols cooling temperatures throughout the
+20th century, especially between 1950 and 1980 when the estimated
+range of aerosol cooling was about 0.1°C to 0.5°C. Jones et al. (2016)
+attributed a warming of 0.87 to 1.22°C per century over the period
+1906 to 2005 to greenhouse gases, partially offset by a cooling of
+−0.54°C to −0.22°C per century attributed to aerosols. But they also
+found that detection of the greenhouse gas or the aerosol signal
+often fails, because of uncertainties in modelled patterns of change
+and internal variability. That point is illustrated by Figure 3.7, which
+shows two- and three-way fingerprinting regression coefficients for 13
+CMIP6 models and the corresponding attributable warming ranges,
+derived using HadCRUT4 (Gillett et al., 2021). Regression coefficients
+with an uncertainty range that includes zero mean that detection has
+failed. Models with regression coefficients significantly less than one
+significantly overpredict the temperature response to the corresponding
+forcing. Conversely, models with regression coefficients significantly
+greater than one underpredict the response to these forcings. While
+estimates of warming attributable to anthropogenic influence derived
+using individual models are generally consistent, estimates of warming 
+attributable to greenhouse gases and aerosols separately based on
+individual models are not all consistent, and detection of the aerosol
+influence fails more often than that of greenhouse gases. Hence,
+results of recent studies emphasize the need to use multi-model
+means to better constrain estimates of GSAT changes attributable to
+greenhouse gas and aerosol forcing (Schurer et al., 2018; Gillett et al.,
+2021; Ribes et al., 2021).
+Figure 3.8 compares attributable changes in globally complete GSAT
+for the period 2010–2019 relative to 1850–1900 from three detection
+and attribution studies, two of which use CMIP6 multi-model means
+(Gillett et al., 2021; Ribes et al., 2021), and an estimate based on
+assessed effective radiative forcing and transient and equilibrium
+climate sensitivity (see Section 7.3.5.3). The reference period
+1850–1900 is used to assess attributable temperature changes
+because this is when the earliest gridded surface temperature
+records start, this is when the CMIP6 historical simulations start,
+this is the earliest base period used in attribution literature, and
+this is a reference period used in IPCC SR1.5 and earlier reports.
+It should, however, be noted that Cross-Chapter Box  1.2 assesses
+with medium confidence that there was an anthropogenic warming
+with a likely range of 0.0°C–0.2°C between 1750 and 1850–1900.
+Figure  3.8 also shows the GSAT changes directly simulated in
+response to these forcings in thirteen CMIP6 models. In spite of their
+different methodologies and input datasets, the three attribution
+approaches yield very similar results, with the anthropogenic
+attributable warming range encompassing observed warming, and
+the natural attributable warming being close to zero. The warming
+driven by greenhouse gas increases is offset in part by cooling due
+to other anthropogenic forcing agents, mostly aerosols, although
+uncertainties in these contributions are larger than the uncertainty in
+the net anthropogenic warming, as discussed above. Estimates based
+on physical understanding of forcing and ECS made by Chapter 7 are
+close to estimates from attribution studies, despite being the products
+of a different approach. This agreement enhances confidence in the
+magnitude and causes of attributable surface temperature warming.
+The AR5 found high confidence for a major role for anthropogenic
+forcing in driving warming over each of the inhabited continents,
+except for Africa where they found only medium confidence
+because of limited data availability (Bindoff et al., 2013). At the
+hemispheric scale, Friedman et al. (2020) and Bonfils et al. (2020)
+detected an anthropogenically forced response of inter-hemispheric
+contrast in surface temperature change, which has a complex time
+evolution but shows the Northern Hemisphere cooling relative
+to the Southern Hemisphere until around 1975 but then warming
+after that. Bonfils et al. (2020) attribute the Northern Hemisphere
+reversal to a combination of reduced aerosol forcing and greenhouse
+gas induced warming of Northern Hemisphere land masses.
+Friedman et al. (2020) found that CMIP5 models simulate the 
+correct sign of the inter-hemispheric contrast when forced with all
+forcings but underestimate its magnitude. Figure 3.9 shows global
+surface temperature change in CMIP6 all-forcing and natural-only
+simulations globally, averaged over continents, and separately over
+land and ocean surfaces. All-forcing simulations encompass observed
+temperature changes for all regions, while natural-only simulations
+fail to do so in recent decades except in Antarctica, based on the
+annual means shown. As stated above, warming results from
+a partial offset of greenhouse gas warming by aerosol cooling. That
+offset is stronger over land than ocean. Regionally, models show
+a large range of possible temperature responses to greenhouse gas
+and aerosol forcing, which complicates single-forcing attribution.
+A more detailed discussion of regional attribution can be found in
+Section 10.4. Over global land surfaces, Chan and Wu (2015) used
+CMIP5 simulations to attribute a warming trend of 0.3 (2.5%–97.5%
+confidence interval: 0.2–0.36) °C per decade to anthropogenic
+forcing, with natural forcing only contributing 0.05 (0.02–0.06) °C
+per decade. Accounting for unsampled sources of uncertainty and the
+availability of only a single study, their result suggests that it is very
+likely that human influence is the main driver of warming over land.
+In summary, since the publication of AR5, new literature has
+emerged that better accounts for methodological and climate model
+uncertainties in attribution studies (Ribes et al., 2017; Hannart and
+Naveau, 2018) and that concludes that anthropogenic warming
+is approximately equal to observed warming over the 1951–2010
+period. The IPCC SR1.5 reached the same conclusion for 2017 relative
+to 1850–1900 based on anthropogenic warming and associated
+uncertainties calculated using the method of Haustein et al. (2017).
+Moreover, the improved understanding of the causes of the apparent
+slowdown in warming over the beginning of the 21st century and
+the difference in simulated and observed warming trends over this
+period (Cross-Chapter Box 3.1) further improve our confidence in the
+assessment of the dominant anthropogenic contribution to observed
+warming. In deriving our assessments, these considerations are
+balanced against new literature that raises questions about the ability
+of some models to simulate variability in surface temperatures over
+a  range of time scales (Laepple and Huybers, 2014; Parsons et al.,
+2017; Friedman et al., 2020), and the finding that some CMIP6 models
+exhibit substantially higher multi-decadal internal variability than
+that seen in CMIP5, which remains to be fully understood (Parsons
+et al., 2020; Ribes et al., 2021). Further, uncertainties in simulated
+aerosol-cloud interactions are still large (Section 7.3.3.2.2), resulting
+in very diverse spatial responses of different climate models to
+aerosol forcing, and inter-model differences in the historical global
+mean temperature evolution and in diagnosed cooling attributable to
+aerosols (Figure 3.8). Moreover, like previous generations of coupled
+model simulations, historical and single forcing CMIP6 simulations
+follow a common experimental design (Eyring et al., 2016a; Gillett
+et al., 2016) and are thus all driven by the same common set of
+forcings, even though these forcings are uncertain. Hence, forcing
+uncertainty is not directly accounted for in most of the attribution and
+model evaluation studies assessed here, although this limitation can
+to some extent be addressed by comparing with previous generation
+multi-model ensembles or individual model studies using different
+sets of forcings.
+The IPCC SR1.5 best estimate and likely range of anthropogenic
+attributable GMST warming was 1.0 ± 0.2°C in 2017 with respect
+to the period 1850–1900. Here, the best estimate is expressed
+in terms of GSAT and is calculated as the average of the three
+estimates shown in Figure 3.9, yielding a value of 1.07°C. Ranges
+for attributable GSAT warming are derived by finding the smallest
+ranges with a precision of 0.1°C which span all of the 5–95% ranges
+from the attribution studies shown in Figure 3.9. These ranges are
+then assessed as likely rather than very likely because the studies
+may underestimate the importance of the structural limitations of
+climate models, which probably do not represent all possible sources
+of internal variability; use too simple climate models, which may
+underestimate the role of internal variability; or underestimate model
+uncertainty, especially when using model ensembles of limited size
+and inter-dependent models, for example through common errors in
+forcings across models, as discussed above. This leads to a likely range
+for anthropogenic attributable warming in 2010–2019 relative to
+1850–1900 of 0.8 to 1.3°C in terms of GSAT. This range encompasses
+the best estimate and very likely range of observed GSAT warming of
+1.06 [0.88 to 1.21] °C over the same period (Cross-Chapter Box 2.3).
+There is medium confidence that the best estimate and likely ranges
+of attributable warming expressed in terms of GMST are equal to
+those for GSAT (Cross-Chapter Box 2.3). Repeating the process for
+other time periods leads to the best estimates and likely ranges listed
+in Table 3.1. GSAT change attributable to natural forcings is −0.1 to
++0.1°C. The likely range of GSAT warming attributable to greenhouse
+gases is assessed in the same way to be 1.0 to 2.0°C while the GSAT
+change attributable to aerosols, ozone and land-use change is −0.8
+to 0.0°C. Progress in attribution techniques allows the important
+advance of attributing observed surface temperature warming since
+1850–1900, instead of since 1951 as was done in AR5. The IPCC AR5 assessed the likely range of the contribution of internal
+variability to GMST warming to be −0.1 to +0.1°C over the period
+1951–2010. Since then, several studies have downplayed the
+contribution of internal modes of variability to global temperature
+variability, often by arguing for a forced component to those internal
+modes (Mann et al., 2014; Folland et al., 2018; Haustein et al.,
+2019; Liguori et al., 2020). Haustein et al. (2017) found a 5–95%
+confidence interval of −0.09°C to +0.12°C for the contribution of
+internal variability to warming between 1850–1879 and 2017.
+Ribes et al. (2021) imply a contribution of internal variability of
+−0.02°C ± 0.16°C to warming between 2010–2019 and 1850–1900,
+assuming independence between errors in the observations and in
+the estimate of the forced response. Based on these studies, but
+allowing for unsampled sources of error, we assess the likely range
+of the contribution of internal variability to GSAT warming between
+2010–2019 and 1850–1900 to be −0.2°C to +0.2°C.
+The IPCC SR1.5 gave a likely range for the human-induced warming rate
+of 0.1°C to 0.3°C per decade in 2017, with a best estimate of 0.2°C per
+decade (Allen et al., 2018). Table 3.1 lists the estimates of attributable
+anthropogenic warming rate over the period 2010–2019 based on the
+three studies that underpin the assessment of GSAT warming (Haustein
+et al., 2017; Gillett et al., 2021; Ribes et al., 2021). Estimates from
+Haustein et al. (2017), based on observed warming, and Ribes et al.
+(2021), based on CMIP6 simulations constrained by observed warming,
+are in good agreement. The Gillett et al. (2021) estimate, also based
+on CMIP6 models, corresponds to a larger anthropogenic attributable
+warming rate, because of a smaller warming rate attributed to natural
+forcing than in Ribes et al. (2021). This disagreement does not support
+a decrease in uncertainty compared to the SR1.5 assessment. So the
+range for anthropogenic attributable surface temperature warming
+rate of 0.1°C to 0.3°C per decade is again assessed to be likely, with a
+best estimate of 0.2°C per decade.

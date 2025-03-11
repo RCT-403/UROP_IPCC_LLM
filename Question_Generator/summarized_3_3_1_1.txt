@@ -1,0 +1,58 @@
+The analysis of surface temperature changes, primarily influenced by human activities, 
+remains one of the most robust aspects of climate research due to long observational records, 
+strong theoretical understanding, and a clear anthropogenic signal compared to natural variability.
+The AR5 concluded with high confidence that human activities were responsible for over half of 
+the observed global mean surface temperature increase from 1951 to 2010 and virtually excluded
+internal variability as a sole explanation for the warming. Climate models, including CMIP5, 
+successfully reproduced historical temperature trends and variability, lending confidence to 
+their use in detection and attribution studies.
+
+The CMIP6 models, a new generation of climate simulations, were assessed for their ability to 
+replicate patterns, trends, and variability of surface temperatures. These models show overall 
+improvements compared to CMIP5, particularly in reproducing historical temperature patterns. 
+However, persistent biases remain, especially in high-latitude regions like the Arctic and in 
+simulating aerosol radiative forcing. Improvements in model resolution have helped reduce biases 
+in some cases, but challenges remain in capturing complex processes such as cloud physics, ocean 
+circulation, and surface energy budgets.
+
+Reconstructions from paleoclimate proxies, covering periods like the Last Glacial Maximum (LGM), 
+mid-Holocene, and Pliocene, have been used to evaluate models. CMIP6 shows better alignment with 
+temperature reconstructions for periods like the Pliocene and Eocene, compared to CMIP5, due to 
+improved understanding of uncertainties in temperature proxies and boundary conditions. Despite 
+this progress, regional biases persist, such as underestimating Arctic warming during the mid-Holocene. 
+In the historical period, CMIP6 models replicate global warming patterns but show discrepancies 
+in specific periods, such as the mid-20th century cooling and late 20th-century warming, attributed 
+to aerosol forcing and internal variability.
+
+Internal variability, especially from oceanic and atmospheric systems like the El Niño–Southern 
+Oscillation (ENSO) and Atlantic Multi-decadal Oscillation (AMO), plays a significant role in decadal 
+and multi-decadal temperature trends. CMIP6 models exhibit higher variability than CMIP5 in some cases,
+ which raises questions about their representation of these processes. However, studies confirm that 
+ internal variability, while influential on shorter timescales, does not undermine the conclusion that 
+ human-induced factors dominate long-term warming trends. For instance, volcanic eruptions cause short-term 
+ cooling, but models and reconstructions align well in reproducing such events over long timescales.
+
+Attribution studies, which identify the causes of observed temperature changes, have advanced 
+significantly since AR5. New techniques improve the accounting for uncertainties in observations, models, and internal variability, enhancing confidence in results. The dominant role of greenhouse gases in driving observed warming is well established, with aerosols causing partial offsets through cooling effects. Anthropogenic forcing is credited with reversing a 5,000-year cooling trend in Northern Hemisphere mid- to high-latitudes. However, challenges remain in isolating the contributions of individual factors like aerosols due to uncertainties in their spatial and temporal impacts.
+
+The likely range of anthropogenic-attributable warming since 1850–1900 is 0.8°C to 1.3°C, with 
+a best estimate of 1.07°C. This range encompasses observed warming, reinforcing confidence in 
+detection and attribution studies. The rate of human-induced warming is assessed to be 0.1°C to 
+0.3°C per decade, with a best estimate of 0.2°C per decade. Models also show that natural forcings, 
+such as solar and volcanic activity, have minimal contributions to long-term warming trends,
+ further highlighting the dominant role of human activities.
+
+Despite progress, uncertainties persist, particularly in aerosol-cloud interactions, internal 
+variability, and model physics. Some CMIP6 models exhibit higher multi-decadal variability than 
+CMIP5 or proxy reconstructions, which could influence attribution conclusions. Additionally, 
+forcing uncertainties remain unaccounted for in most attribution studies. These limitations 
+emphasize the need for multi-model approaches and further refinement of climate models to reduce
+ biases and improve understanding.
+
+In summary, CMIP6 models reproduce observed large-scale temperature patterns and variability 
+as well as CMIP5, with improvements in some areas but lingering biases in others. Anthropogenic 
+factors remain the dominant driver of observed warming, as supported by robust detection and 
+attribution studies. The agreement between models and observations, alongside advances in attribution 
+techniques, enhances confidence in the assessment of human-induced climate change. However,
+ challenges like variability and aerosol forcing uncertainties highlight opportunities for further 
+ refinement in climate modeling and analysis.
