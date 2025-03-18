@@ -1,0 +1,29 @@
+**Question:** How do CMIP6 models improve upon CMIP5 in simulating surface temperatures, and what challenges persist?  
+
+*(Complexity: 3/5 Requires identifying specific advancements and lingering biases while synthesizing key model comparisons.)*
+**Question:** How do CMIP6's improved Pliocene/Eocene alignments and persistent regional biases affect confidence in anthropogenic warming dominance?  
+
+*(Complexity: 5/5 - Integrates model advancements, persistent uncertainties, and attribution conclusions, requiring synthesis of multiple interconnected concepts.)*
+**Question:** How do CMIP6 models improve compared to CMIP5 despite persistent biases?  
+
+**Complexity:** 3/5  
+**Answer:** CMIP6 shows better historical temperature alignment, reduced resolution-related biases, and improved proxy agreement, but struggles with Arctic warming and aerosol effects.
+**Question:** How do CMIP6 advancements and persistent biases impact confidence in attributing anthropogenic warming?
+**Question:**  How do CMIP6 models improve upon CMIP5, yet still face persistent challenges?
+
+**Complexity:** 3/5  
+**Answer Logic:** The question targets specific advancements (e.g., better historical temperature alignment, paleoclimate reconstructions) and unresolved issues (Arctic biases, aerosol uncertainties) discussed in the text.
+**Question:** How do CMIP6 improvements and Arctic biases impact confidence in anthropogenic warming attribution?  
+
+**Word Count:** 14  
+**Complexity:** 5/5 (Requires analyzing model advancements, unresolved regional biases, and their combined influence on attribution certainty.)
+**Question:** How do CMIP6 models improve upon CMIP5 yet retain biases in temperature modeling?  
+**Complexity:** 3/5 (requires comparing model generations, addressing advancements, and acknowledging persistent limitations).
+
+**Question:** How do CMIP6 models improve upon CMIP5 despite persistent biases?  
+
+**Complexity:** 3/5  
+**Word Count:** 12
+**Question:** How do CMIP6 models enhance attribution of human-induced warming over CMIP5 despite persistent regional biases?  
+
+**Complexity:** 5/5 (Requires synthesis of model advancements, limitations, and their implications for detection/attribution studies.)

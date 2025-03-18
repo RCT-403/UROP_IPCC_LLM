@@ -17,8 +17,6 @@ tokenized_content = tokenize_text_file(file_path)
 tokenized_string = ' '.join(tokenized_content)
 
 # Prepare the data for the API request
-number_of_words = 20 
-complexity = 0.5
 # Use the tokenized content here
 # Try to limit the length of the question
 # and focus on simple questions/responses
@@ -26,15 +24,15 @@ complexity = 0.5
 # Generate Questions and Pair Answers, give some ratings, then we compare the models. 
 
 
-data = json.dumps({
-    "model": "deepseek/deepseek-r1:free",
-    "messages": [
-        {
-            "role": "user",
-            "content": f"Based on the following text, generate another insightful question that encourages deeper thinking about the topic with less than {number_of_words} words: {tokenized_string}"
-        }
-    ],
-})
+# data = json.dumps({
+#     "model": "deepseek/deepseek-r1:free",
+#     "messages": [
+#         {
+#             "role": "user",
+#             "content": f"Based on the following text, generate another insightful question that encourages deeper thinking about the topic with less than {number_of_words} words: {tokenized_string}"
+#         }
+#     ],
+# })
 
 # Send the request
 # response = requests.post(
@@ -56,14 +54,14 @@ data = json.dumps({
 #     print(f"Error: {response.status_code} - {response.text}")
 
 
-for number_of_words in [10,15,25]:
-    for complexity in [1,3,5]:
+for i in range(5):
+    for complexity in [3, 5]:
         data = json.dumps({
             "model": "deepseek/deepseek-r1:free",
             "messages": [
                 {
                     "role": "user",
-                    "content": f"Based on the following text, generate another question with a complexity of {complexity} out of 5 about the topic with less than {number_of_words} words: {tokenized_string}"
+                    "content": f"Based on the following text, generate another question with a complexity of {complexity} out of 5 about the topic with less than 15 words: {tokenized_string}"
                 }
             ],
         })
@@ -72,7 +70,7 @@ for number_of_words in [10,15,25]:
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json",
             },
             data=data
@@ -81,13 +79,54 @@ for number_of_words in [10,15,25]:
         # Print the response
         if response.status_code == 200:
             response_data = response.json()
-            content = response_data['choices'][0]['message']['content']
-            reason = response_data['choices'][0]['message']['reasoning']
+            question_content = response_data['choices'][0]['message']['content']
             print("NEW QUESTION")
-            print("Number of words: ", number_of_words)
             print("Complexity: ", complexity)
-            print(content)
+            print(question_content)
+            
+            # write the question content in a new line in questions.txt
+            with open('questions.txt', 'a') as file:
+                file.write(question_content + '\n')
+        
         else:
             print(f"Error: {response.status_code} - {response.text}")
+            continue
+        
+        data = json.dumps({
+            "model": "qwen/qwq-32b:free",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": f"Given the question {question_content}, generate a response with less than 25 words based on the following text: {tokenized_string}"
+                }
+            ],
+        })
+
+        # Send the request
+        response = requests.post(
+            url="https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": "Bearer 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",
+                "Content-Type": "application/json",
+            },
+            data=data
+        )
+        
+        # Print the response
+        if response.status_code == 200:
+            response_data = response.json()
+            answer_content = response_data['choices'][0]['message']['content']
+            print("ANSWER TO THE QUESTION")
+            print("Complexity: ", complexity)
+            print(answer_content)
+            
+            with open('answers.txt', 'a') as file:
+                file.write(answer_content + '\n')
+        
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+
+
+
 
 
