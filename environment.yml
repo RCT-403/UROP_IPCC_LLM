@@ -160,4 +160,4 @@ dependencies:
       - wcwidth==0.2.13
       - xxhash==3.5.0
       - yarl==1.18.3
-prefix: /Users/ronaldleung/anaconda3/envs/ipccllm
+prefix: null # hides the prefix path
