@@ -73,7 +73,7 @@ def prepare_datasets(train_file, val_file, tokenizer, max_length=1024):
 
 def main():
     # Configuration
-    base_model_name = "deepseek-ai/deepseek-coder-1.3b-base" 
+    base_model_name = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B" 
     train_file = './data/processed/train.json'
     val_file = './data/processed/test.json'
     output_dir = './output'
@@ -103,13 +103,13 @@ def main():
         lora_dropout=0.05,     # Dropout probability for LoRA layers
         bias="none",           # Bias type
         target_modules=[       # Modules to apply LoRA to
-            "q_proj", 
-            "k_proj", 
-            "v_proj", 
-            "o_proj", 
-            "gate_proj", 
-            "down_proj", 
-            "up_proj"
+            "q_proj",  # Query projection
+            "k_proj",   # Key projection
+            "v_proj",  # Value projection
+            "o_proj",  # Output projection
+            "gate_proj",  # Gate projection
+            "down_proj", # Down projection
+            "up_proj" 
         ]
     )
     model = get_peft_model(model, lora_config)
@@ -169,11 +169,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # paths = [
-    #     './data/processed/training_examples_2.json',
-    #     './data/processed/training_examples_3.json',
-    #     './data/processed/training_examples_4.json',
-    #     './data/processed/training_examples_11.json'
-    # ]
-    # combine_chapters(paths, './data/processed/training_examples_combined.json')
