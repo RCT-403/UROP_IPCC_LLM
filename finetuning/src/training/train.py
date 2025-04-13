@@ -1,3 +1,31 @@
+
+import logging
+import os
+import socket
+import tempfile
+import shutil
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# IMPORTANT: Set these variables BEFORE importing any HuggingFace libraries
+hostname = socket.gethostname()
+temp_dir = f"/tmp/hf_cache_{os.getenv('USER')}_{hostname}"
+
+# Clean up any existing directory to start fresh
+if os.path.exists(temp_dir):
+    shutil.rmtree(temp_dir)
+os.makedirs(temp_dir, exist_ok=True)
+logger.info(f"Created custom cache directory: {temp_dir}")
+
+# Set ALL possible cache-related environment variables
+os.environ["TRANSFORMERS_CACHE"] = temp_dir
+os.environ["HF_HOME"] = temp_dir
+os.environ["HF_DATASETS_CACHE"] = temp_dir
+os.environ["HUGGINGFACE_HUB_CACHE"] = temp_dir
+os.environ["HF_MODULES_CACHE"] = temp_dir
+os.environ["XDG_CACHE_HOME"] = temp_dir
+
 from transformers import (
     Trainer, 
     TrainingArguments, 
@@ -5,15 +33,10 @@ from transformers import (
     AutoTokenizer,
     DataCollatorForLanguageModeling
 )
-from datasets import Dataset
 import json
-import os
+from datasets import Dataset
 import torch
 from peft import get_peft_model, LoraConfig, TaskType
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 def load_data(file_path):
     logger.info(f"Loading data from {file_path}")
@@ -90,9 +113,19 @@ def main():
     
     model = AutoModelForCausalLM.from_pretrained(
         base_model_name,
-        torch_dtype=torch.float32,
-        device_map="auto"
+        # device_map="auto",
+        load_in_8bit=False, # make sure we don't use quantization
+        use_safetensors=True,
+        # torch_dtype=torch.float32,
+        torch_dtype=torch.bfloat16,
     )
+
+    # explicitly map the model to the GPU if available
+    if torch.cuda.is_available():
+        model = model.to("cuda")
+        logger.info("Model moved to GPU")
+    else:
+        logger.info("No GPU available, using CPU")
     
     # Apply LoRA to the model
     logger.info("Applying LoRA configuration")
@@ -128,22 +161,24 @@ def main():
     training_args = TrainingArguments(
         output_dir=output_dir,
         overwrite_output_dir=True,
-        evaluation_strategy="steps",
-        eval_steps=100,
-        save_strategy="steps",
+
+        # evaluation_strategy="steps", # this is in a new version of transformers
+        # eval_steps=100,
+        # save_strategy="steps",
+
         save_steps=200,
         save_total_limit=2,
         learning_rate=2e-4,
         weight_decay=0.01,
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=8,
-        gradient_accumulation_steps=4,
+        per_device_train_batch_size=4,
+        per_device_eval_batch_size=4,
+        gradient_accumulation_steps=8,
         num_train_epochs=3,
         warmup_steps=100,
         logging_dir=f"{output_dir}/logs",
         logging_steps=10,
         fp16=True,
-        report_to="none"
+        # report_to="none"
     )
     
     # Initialize Trainer
@@ -153,7 +188,7 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         data_collator=data_collator,
-        tokenizer=tokenizer,
+        # tokenizer=tokenizer,
     )
     
     # Start training
