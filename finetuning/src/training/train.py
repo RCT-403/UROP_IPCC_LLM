@@ -1,8 +1,6 @@
-
 import logging
 import os
 import socket
-import tempfile
 import shutil
 
 logging.basicConfig(level=logging.INFO)
@@ -10,21 +8,20 @@ logger = logging.getLogger(__name__)
 
 # IMPORTANT: Set these variables BEFORE importing any HuggingFace libraries
 hostname = socket.gethostname()
-temp_dir = f"/tmp/hf_cache_{os.getenv('USER')}_{hostname}"
+# Change to permanent cache location instead of temporary directory
+cache_dir = f"/disk/r089/htleungav/hf_cache"
 
-# Clean up any existing directory to start fresh
-if os.path.exists(temp_dir):
-    shutil.rmtree(temp_dir)
-os.makedirs(temp_dir, exist_ok=True)
-logger.info(f"Created custom cache directory: {temp_dir}")
+# Create the cache directory if it doesn't exist, but don't delete existing one
+os.makedirs(cache_dir, exist_ok=True)
+logger.info(f"Using cache directory: {cache_dir}")
 
 # Set ALL possible cache-related environment variables
-os.environ["TRANSFORMERS_CACHE"] = temp_dir
-os.environ["HF_HOME"] = temp_dir
-os.environ["HF_DATASETS_CACHE"] = temp_dir
-os.environ["HUGGINGFACE_HUB_CACHE"] = temp_dir
-os.environ["HF_MODULES_CACHE"] = temp_dir
-os.environ["XDG_CACHE_HOME"] = temp_dir
+os.environ["TRANSFORMERS_CACHE"] = cache_dir
+os.environ["HF_HOME"] = cache_dir
+os.environ["HF_DATASETS_CACHE"] = cache_dir
+os.environ["HUGGINGFACE_HUB_CACHE"] = cache_dir
+os.environ["HF_MODULES_CACHE"] = cache_dir
+os.environ["XDG_CACHE_HOME"] = cache_dir
 
 from transformers import (
     Trainer, 
@@ -50,7 +47,7 @@ def prepare_datasets(train_file, val_file, tokenizer, max_length=1024):
     # Load data from JSON files
     train_data = load_data(train_file)
     val_data = load_data(val_file)
-    
+
     # Convert to datasets format
     def convert_to_dataset(examples):
         prompts = [item["prompt"] for item in examples]
@@ -96,28 +93,32 @@ def prepare_datasets(train_file, val_file, tokenizer, max_length=1024):
 
 def main():
     # Configuration
-    base_model_name = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B" 
-    train_file = './data/processed/train.json'
-    val_file = './data/processed/test.json'
-    output_dir = './output'
+    base_model_name = "HuggingFaceTB/SmolLM2-360M-Instruct"
+    train_file = '/home/htleungav/UROP_IPCC_LLM/data/processed/test.json'
+    val_file = '/home/htleungav/UROP_IPCC_LLM/data/processed/train.json'
+    # Store output in the linked directory
+    output_dir = '/disk/r089/htleungav/model_outputs'
     
     logger.info(f"Initializing fine-tuning with base model: {base_model_name}")
+    logger.info(f"Output will be saved to: {output_dir}")
     
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     
     # Load tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained(base_model_name)
+    tokenizer = AutoTokenizer.from_pretrained(
+        base_model_name, 
+        cache_dir=cache_dir  # Explicitly specify cache directory
+    )
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     
     model = AutoModelForCausalLM.from_pretrained(
         base_model_name,
-        # device_map="auto",
-        load_in_8bit=False, # make sure we don't use quantization
+        load_in_8bit=False,
         use_safetensors=True,
-        # torch_dtype=torch.float32,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=torch.float32,  # Use float32 instead of bfloat16 for CPU
+        cache_dir=cache_dir,  # Explicitly specify cache directory
     )
 
     # explicitly map the model to the GPU if available
@@ -131,27 +132,21 @@ def main():
     logger.info("Applying LoRA configuration")
     lora_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
-        r=16,                  # Rank dimension
-        lora_alpha=32,         # Alpha parameter for LoRA scaling
-        lora_dropout=0.05,     # Dropout probability for LoRA layers
-        bias="none",           # Bias type
-        target_modules=[       # Modules to apply LoRA to
-            "q_proj",  # Query projection
-            "k_proj",   # Key projection
-            "v_proj",  # Value projection
-            "o_proj",  # Output projection
-            "gate_proj",  # Gate projection
-            "down_proj", # Down projection
-            "up_proj" 
-        ]
+        r=4,                  # Smaller rank dimension
+        lora_alpha=16,        # Smaller alpha
+        lora_dropout=0.0,     # No dropout for testing
+        target_modules=["q_proj", "v_proj"]  # Target fewer modules
     )
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
     
     # Prepare datasets
     train_dataset, val_dataset = prepare_datasets(train_file, val_file, tokenizer)
+    # For testing, use only a small subset of data
+    train_dataset = train_dataset.select(range(min(30, len(train_dataset)))) # choose the first 30 samples
+    val_dataset = val_dataset.select(range(min(15, len(val_dataset))))
     
-    # Data collator
+    # Data collator, allow automatic padding, attention mask, and other preprocessing tasks
     data_collator = DataCollatorForLanguageModeling(
         tokenizer=tokenizer,
         mlm=False  # We're not using masked language modeling
@@ -162,23 +157,32 @@ def main():
         output_dir=output_dir,
         overwrite_output_dir=True,
 
-        # evaluation_strategy="steps", # this is in a new version of transformers
-        # eval_steps=100,
-        # save_strategy="steps",
-
-        save_steps=200,
-        save_total_limit=2,
-        learning_rate=2e-4,
-        weight_decay=0.01,
-        per_device_train_batch_size=4,
-        per_device_eval_batch_size=4,
-        gradient_accumulation_steps=8,
-        num_train_epochs=3,
-        warmup_steps=100,
-        logging_dir=f"{output_dir}/logs",
-        logging_steps=10,
-        fp16=True,
-        # report_to="none"
+        # Reduce evaluation frequency for faster testing
+        eval_strategy="steps", 
+        eval_steps=10,           # Evaluate less frequently
+        save_strategy="no",       # Don't save checkpoints for testing
+        
+        # Minimal learning parameters for testing
+        learning_rate=2e-4,       # Slightly higher learning rate for faster convergence
+        weight_decay=0.0,         # Remove weight decay for faster computation
+        lr_scheduler_type="linear", # Simpler scheduler
+        
+        # Reduce batch sizes for CPU training
+        per_device_train_batch_size=2, # Smaller batch size for CPU
+        per_device_eval_batch_size=2,
+        gradient_accumulation_steps=8, # Accumulate more gradients instead
+        num_train_epochs=0.1,     # Just 10% of one epoch for testing
+        max_steps=10,             # Or limit to a fixed number of steps
+        
+        # Disable features that slow down CPU training
+        fp16=False,               # No mixed precision on CPU
+        fp16_opt_level=None,      # Remove this parameter
+        dataloader_num_workers=0, # No parallelization for testing
+        group_by_length=False,    # Disable grouping to simplify
+        
+        # Minimal logging
+        logging_steps=5,
+        report_to="none",         # Disable reporting for testing
     )
     
     # Initialize Trainer
@@ -187,8 +191,8 @@ def main():
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
-        data_collator=data_collator,
-        # tokenizer=tokenizer,
+        data_collator=data_collator, 
+        tokenizer=tokenizer, 
     )
     
     # Start training
