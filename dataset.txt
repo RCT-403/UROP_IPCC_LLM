@@ -1,0 +1,73 @@
+{
+    "Question": [
+        "How do CMIP6 models improve upon CMIP5 in simulating surface temperatures, and what challenges persist?",
+        "How do CMIP6's improved Pliocene/Eocene alignments and persistent regional biases affect confidence in anthropogenic warming dominance?",
+        "How do CMIP6 models improve compared to CMIP5 despite persistent biases?",
+        "How do CMIP6 advancements and persistent biases impact confidence in attributing anthropogenic warming?",
+        "How do CMIP6 models improve upon CMIP5, yet still face persistent challenges?",
+        "How do CMIP6 improvements and Arctic biases impact confidence in anthropogenic warming attribution?",
+        "How do CMIP6 models improve upon CMIP5 yet retain biases in temperature modeling?",
+        "How do CMIP6 models improve upon CMIP5 despite persistent biases?",
+        "How do CMIP6 models enhance attribution of human-induced warming over CMIP5 despite persistent regional biases?",
+        "How do CMIP6 improvements and Arctic biases impact confidence in anthropogenic warming attribution?",
+        "How do CMIP6 models improve upon CMIP5 in simulating surface temperatures, and what challenges persist?",
+        "How do CMIP6's improved Pliocene/Eocene alignments and persistent regional biases affect confidence in anthropogenic warming dominance?",
+        "How do CMIP6 models improve compared to CMIP5 despite persistent biases?",
+        "How do CMIP6 advancements and persistent biases impact confidence in attributing anthropogenic warming?",
+        "How do CMIP6 models improve upon CMIP5, yet still face persistent challenges?",
+        "How do CMIP6 improvements and Arctic biases impact confidence in anthropogenic warming attribution?",
+        "How do CMIP6 models improve upon CMIP5 yet retain biases in temperature modeling?",
+        "How do CMIP6 models improve upon CMIP5 despite persistent biases?",
+        "How do CMIP6 models enhance attribution of human-induced warming over CMIP5 despite persistent regional biases?",
+        "How do CMIP6 improvements and Arctic biases impact confidence in anthropogenic warming attribution?"
+    ],
+    "Answer": [
+        "CMIP6 models have more colors than CMIP5, but sometimes they still use the same old graphs.",
+        "The Pliocene and Eocene were nice places, but they don’t really help us understand the weather today.",
+        "CMIP6 models are newer, which is interesting, but they still have some old ideas mixed in.",
+        "Advancements in CMIP6 are like new shoes; they look good, but you can still trip over the same things.",
+        "CMIP6 models are like a new recipe, but sometimes you still burn the cookies.",
+        "Improved Arctic models in CMIP6 are cool, but the ice still melts, which is a bit confusing.",
+        "CMIP6 has more features than CMIP5, but sometimes it feels like a fancy car with a flat tire.",
+        "Even with new technology, CMIP6 models can still miss the point, like a movie with a confusing plot.",
+        "CMIP6 models try hard to explain warming, but sometimes they just leave us scratching our heads.",
+        "While CMIP6 shows some progress, it’s like updating your phone but still having the same charger issues.",
+        "CMIP6 improves with better resolution and paleo-alignment but still struggles with Arctic biases, aerosol uncertainties, and variability challenges.",
+        "CMIP6's improved paleo-alignments strengthen confidence in anthropogenic dominance despite persistent regional biases.",
+        "CMIP6 shows better historical temperature alignment, reduced resolution-related biases, and improved proxy agreement, but struggles with Arctic warming and aerosol effects.",
+        "CMIP6 advancements enhance confidence in human-driven warming, but persistent biases (e.g., Arctic, aerosols) highlight ongoing uncertainties.",
+        "CMIP6 improves with better historical temperature alignment and paleoclimate reconstructions but still struggles with Arctic biases and aerosol uncertainties. (25 words)",
+        "CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+        "CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+        "Human activities drive most observed warming, with climate models confirming dominant anthropogenic influence despite lingering regional biases and uncertainties.",
+        "CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+        "CMIP6 improves detection via refined global patterns, advanced aerosol modeling, and enhanced uncertainty analysis, despite lingering regional biases."
+    ],
+    "Rating":[ 
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5
+    ]
+
+
+
+
+
+}
