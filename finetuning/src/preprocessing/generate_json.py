@@ -3,7 +3,7 @@
 - train-test split
 '''
 import json
-from decompose_ipcc import build_report
+from finetuning.src.preprocessing.decompose_ipcc import build_report
 from finetuning.src.preprocessing.format_data import format_data, create_training_examples
 import random
 
@@ -52,5 +52,3 @@ if __name__ == '__main__':
     train_test_split(training_examples, train_size, 
                     "./data/processed/train.json",
                     "./data/processed/test.json")
-        
-        

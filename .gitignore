@@ -1,4 +1,7 @@
 data/
 .DS_Store
-ipccllm_env/
+ipccllm_venv/
 output/
+_archive/
+__pycache__/
+lora_output/
