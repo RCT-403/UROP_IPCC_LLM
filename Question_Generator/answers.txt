@@ -1,10 +1,10 @@
-CMIP6 improves with better resolution and paleo-alignment but still struggles with Arctic biases, aerosol uncertainties, and variability challenges. (25 words)
-CMIP6's improved paleo-alignments strengthen confidence in anthropogenic dominance despite persistent regional biases.
-CMIP6 shows better historical temperature alignment, reduced resolution-related biases, and improved proxy agreement, but struggles with Arctic warming and aerosol effects.
-CMIP6 advancements enhance confidence in human-driven warming, but persistent biases (e.g., Arctic, aerosols) highlight ongoing uncertainties.
-CMIP6 improves with better historical temperature alignment and paleoclimate reconstructions but still struggles with Arctic biases and aerosol uncertainties. (25 words)
-CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.
-CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.
-Human activities drive most observed warming, with climate models confirming dominant anthropogenic influence despite lingering regional biases and uncertainties.
-CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.
-CMIP6 improves detection via refined global patterns, advanced aerosol modeling, and enhanced uncertainty analysis, despite lingering regional biases.
+"CMIP6 improves with better resolution and paleo-alignment but still struggles with Arctic biases, aerosol uncertainties, and variability challenges.",
+"CMIP6's improved paleo-alignments strengthen confidence in anthropogenic dominance despite persistent regional biases.",
+"CMIP6 shows better historical temperature alignment, reduced resolution-related biases, and improved proxy agreement, but struggles with Arctic warming and aerosol effects.",
+"CMIP6 advancements enhance confidence in human-driven warming, but persistent biases (e.g., Arctic, aerosols) highlight ongoing uncertainties.",
+"CMIP6 improves with better historical temperature alignment and paleoclimate reconstructions but still struggles with Arctic biases and aerosol uncertainties. (25 words)",
+"CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+"CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+"Human activities drive most observed warming, with climate models confirming dominant anthropogenic influence despite lingering regional biases and uncertainties.",
+"CMIP6 improves via better resolution, enhanced historical pattern replication, and closer paleo alignment, though biases in high-latitude regions and aerosol forcing persist.",
+"CMIP6 improves detection via refined global patterns, advanced aerosol modeling, and enhanced uncertainty analysis, despite lingering regional biases."
