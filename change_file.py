@@ -1,0 +1,26 @@
+"""
+{
+    "prompt": "Summarize information from IPCC report section: 3.3.2.1 - Paleoclimate Context\n\n",
+    "completion": "A fact hindering detection and attribution studies in precipitation\nand other hydrological variables is the large internal variability of\nthese fields relative to the anthropogenic signal. This low signal-tonoise ratio hinders the emergence of the anthropogenic signal from\nnatural variability. Moreover, the sign of the change depends on\nlocation and time of the year. Paleoclimate records provide valuable\ncontext for observed trends in the 20th and 21st century and assist\nwith the attribution of these trends to human influence (see also\nSection 2.3.1.3.1). By nature, hydrological proxy data represent\nregional conditions, but taken together can represent large-scale\npatterns. As an example of how paleorecords have helped assessing\nthe origin of changes, we consider some, mainly subtropical, regions\nwhich have experienced systematic drying in recent decades (see also\nSection 8.3.1.3). Paleoclimate simulations of monsoons are assessed\nin Section 3.3.3.2.\n\nRecords of tree ring width have provided evidence that recent\nprolonged dry spells in the Levant and Chile are unprecedented in the\nlast millennium (high confidence) (Cook et al., 2016a; Garreaud et al.,\n2017). East Africa has also been drying in recent decades (Rowell et al.,\n2015; Hoell et al., 2017), a trend that is unusual in the context of the\n\n\nsedimentary paleorecord spanning the last millennium (Tierney et al.,\n2015). This may be a signature of anthropogenic forcing but cannot\nyet be distinguished from natural variability (Hoell et al., 2017; Philip\net al., 2018). Likewise, tree rings indicate that the 2012\u20132014 drought\nin the south-western United States was exceptionally severe in the\ncontext of natural variability over the last millennium, and may have\nbeen exacerbated by the contribution of anthropogenic temperature\nrise (medium confidence) (Griffin and Anchukaitis, 2014; Williams\net al., 2015). Furthermore, Williams et al. (2020) used a combination\nof hydrological modelling and tree-ring reconstructions to show that\nthe period from 2000 to 2018 was the driest 19-year span in southwestern North America since the late 1500s. Nonetheless, tree rings\nalso indicate the presence of prolonged megadroughts in western\nNorth America throughout the last millennium that were more severe\nthan 20th and 21st century events (high confidence) (Cook et al., 2004,\n2010, 2015). These were associated with internal variability (Coats\net al., 2016; Cook et al., 2016b) and indicate that large-magnitude\nchanges in the water cycle may occur irrespective of anthropogenic\ninfluence (see also McKitrick and Christy, 2019).\n\nPaleoclimate records also allow for model evaluation under\nconditions different from present-day. The AR5 concluded that\nmodels can successfully reproduce to first-order patterns of past\nprecipitation changes during the Last Glacial Maximum (LGM) and\nmid-Holocene, though simulated precipitation changes during the\n\n\n###### 3\n\n\n800\n\n600\n\n\n##### Precipitation change in the Mid-Holocene\n\n\n400\n\n200\n\n\n0\n\n200\n\n\n400\nNorthern Europe W. & C. Europe Mediterranean Sahara/Sahel West Africa\n\n|Col1|Reconstructions FGOALS-g3 MPI-ESM1-2-LR PMIP3 models GISS-E2-1-G MRI-ESM2-0 AWI-ESM-1-1-LR HadGEM3-GC31-LL NESM3 CESM2 INM-CM4-8 NorESM1-F EC-Earth3-LR IPSL-CM6A-LR NorESM2-LM FGOALS-f3-L MIROC-ES2L UofT-CCSM-4|\n|---|---|\n|||\n|||\n|||\n|||\n|||\n\n\n**Figure 3.11 |** **Comparison between simulated annual precipitation changes and pollen-based reconstructions in the mid-Holocene (6000 years ago). The**\narea-averaged changes relative to the pre-industrial control simulations over five regions (Iturbide et al., 2020) as simulated by CMIP6 models (individually identifiable, one\nensemble member per model) and CMIP5 models (blue) are shown, stretching from the tropics to high-latitudes. All regions contain multiple quantitative reconstructions of\nchanges relative to present day; their interquartile range are shown by boxes and with whiskers for their full range excluding outliers. Figure is adapted from Brierley et al. (2020).\nFurther details on data sources and processing are available in the chapter data table (Table 3.SM.1).\n\n\n-----"
+},
+
+change all the "prompt" entry from "Summarize information from IPCC report section: " to "Provide the text for IPCC report section: XXX"
+"""
+
+import json 
+import tqdm
+import os
+
+input_path = '/home/htleungav/UROP_IPCC_LLM/data/processed/test_0.json'
+output_path = '/home/htleungav/UROP_IPCC_LLM/data/processed/test_2.json'
+
+with open(input_path, 'r') as file:
+    data = json.load(file)
+
+
+for i in tqdm.tqdm(range(len(data))):
+    data[i]['prompt'] = data[i]['prompt'].replace('Summarize information from IPCC report section: ', 'Provide the text for IPCC report section: ')
+
+with open(output_path, 'w') as file:    
+    print(f"Writing to {output_path}")
+    json.dump(data, file, indent=4)

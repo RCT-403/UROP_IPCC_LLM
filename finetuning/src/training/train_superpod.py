@@ -48,7 +48,7 @@ def load_data(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
 
-def prepare_datasets(train_file, val_file, tokenizer, max_length=1024):
+def prepare_datasets(train_file, val_file, tokenizer, max_length):
     """Prepare datasets in the correct format for training"""
     logger.info("Preparing datasets for training")
     
@@ -62,7 +62,7 @@ def prepare_datasets(train_file, val_file, tokenizer, max_length=1024):
         completions = [item["completion"] for item in examples]
         
         # Combine prompt and completion for training
-        texts = [prompt + completion for prompt, completion in zip(prompts, completions)]
+        texts = [prompt + completion + tokenizer.eos_token for prompt, completion in zip(prompts, completions)] # Add EOS token
         
         return {"text": texts}
     
@@ -173,7 +173,7 @@ def main():
     # =======================================================================
     
     # Prepare datasets
-    train_dataset, val_dataset = prepare_datasets(train_file, val_file, tokenizer)
+    train_dataset, val_dataset = prepare_datasets(train_file, val_file, tokenizer, max_length=4096)
     
     # Data collator, allow automatic padding, attention mask, and other preprocessing tasks
     data_collator = DataCollatorForLanguageModeling(
@@ -208,7 +208,7 @@ def main():
         # Enable proper checkpointing
         save_strategy="steps",
         save_steps=200,
-        save_total_limit=1,             # Keep only last 3 checkpoints
+        save_total_limit=3,             # Keep only last 3 checkpoints
         
         # Evaluation and logging
         eval_strategy="steps",  # Try this alternate naming

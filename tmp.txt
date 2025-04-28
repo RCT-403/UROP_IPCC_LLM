@@ -1,0 +1,68 @@
+Atmospheric evaporative demand (AED) quantifies the maximum
+amount of actual evapotranspiration (ET) that can happen from land
+surfaces if they are not limited by water availability (Table 11.A.1).
+AED is affected by radiative and aerodynamic components. For this
+reason, the atmospheric dryness, often quantified with the relative
+humidity or the vapour pressure deficit (VPD), is not equivalent to
+the AED, as other variables are also highly relevant, including solar
+radiation and wind speed (Hobbins et al., 2012; McVicar et al., 2012a;
+Sheffield et al., 2012). AED can be estimated using different methods
+(McMahon et al., 2013), and those solely based on air temperature
+(e.g., Hargreaves, Thornthwaite) usually overestimate it in terms of
+magnitude and temporal trends (Sheffield et al., 2012), in particular,
+in the context of substantial background warming. Physically-based
+combination methods such as the Penman-Monteith equation are
+more adequate and recommended since 1998 by the United Nations
+Food and Agriculture Oganization (Pereira et al., 2015). For this reason,
+the assessment of this Chapter, when considering atmosphericbased drought indices, 
+only includes AED estimates using the latter
+(see also Section 11.9). AED is generally higher than ET, since AED
+represents an upper bound for ET. Hence, an AED increase does not
+necessarily lead to increased ET (Milly and Dunne, 2016), in particular
+under drought conditions given soil moisture limitation (Bonan et al.,
+2014; Berg et al., 2016; Konings et al., 2017; Stocker et al., 2018).
+In general, AED is highest in regions where ET is lowest (e.g., desert
+areas), further illustrating the decoupling between the two variables
+under limited soil moisture.
+
+The influence of AED on drought depends on the drought type,
+background climate, the environmental conditions and the moisture
+availability (Hobbins et al., 2016, 2017; Vicente-Serrano et al.,
+2020a). This influence also includes effects not related to increased
+ET. Under low soil moisture conditions, increased AED increases
+plant stress, enhancing the severity of agricultural and ecological
+droughts (Williams et al., 2013; Allen et al., 2015; McDowell et al.,
+2016; Grossiord et al., 2020). Moreover, high VPD impacts overall
+plant physiology; it affects the leaf and xylem safety margins, and
+decreases the sap velocity and plant hydraulic conductance (Fontes
+et al., 2018). VPD also affects the plant metabolism of carbon and,
+if prolonged, it may cause plant mortality via carbon starvation
+(Breshears et al., 2013; Hartmann, 2015). Drought projections based
+
+exclusively on AED metrics overestimate changes in soil moisture and
+runoff deficits. Nevertheless, AED also directly impacts hydrological
+drought, as ET from surface waters is not limited (Wurbs and Ayala,
+2014; Friedrich et al., 2018; Hogeboom et al., 2018; K. Xiao et al., 2018),
+and this effect increases under climate change projections (W. Wang
+et al., 2018; Althoff et al., 2020). In addition, high AED increases crop
+water consumptions in irrigated lands (García-Garizábal et al., 2014),
+contributing to intensifying hydrological droughts downstream (Fazel
+et al., 2017; Vicente-Serrano et al., 2017).
+
+On subseasonal to decadal scales, temporal variations in AED are
+strongly controlled by circulation variability (Williams et al., 2014;
+Chai et al., 2018; Martens et al., 2018), but thermodynamic processes
+also play a fundamental role and, under human-induced climate
+change, dominate the changes in AED. Atmospheric warming due
+to increased atmospheric CO2 concentrations increases AED by
+means of enhanced VPD in the absence of other influences (Scheff
+and Frierson, 2015). Because of the greater warming over land than
+over oceans (Sections 2.3.1.1 and 11.3), the saturation pressure of
+water vapour increases more over land than over oceans; oceanic
+air masses advected over land thus contain insufficient water vapour
+to keep pace with the greater increase in saturation vapour pressure
+over land (Sherwood and Fu, 2014; Byrne and O’Gorman, 2018;
+Findell et al., 2019). Land–atmosphere feedbacks are also important
+in affecting atmospheric moisture content and temperature, with
+resulting effects on relative humidity and VPD (Box 11.1; Berg et al.,
+2016; Haslinger et al., 2019; S. Zhou et al., 2019).
