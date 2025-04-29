@@ -2,7 +2,7 @@ import requests
 import json
 import re
 
-key = ''
+key = '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'
 
 # Function to read and tokenize text from a file
 def tokenize_text_file(file_path):

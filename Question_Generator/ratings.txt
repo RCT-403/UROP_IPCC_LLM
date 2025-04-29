@@ -2,11 +2,9 @@
 5
 5
 5
-5
 5  
 The response comprehensively addresses the question by detailing CMIP6 improvements (e.g., better alignment with paleoclimate proxies, resolution advancements) and persistent Arctic biases (e.g., underestimation of historical and mid-Holocene warming). It explicitly links these factors to confidence in attribution, emphasizing that while biases and uncertainties remain (e.g., aerosol interactions, internal variability), robust detection methods and model consistency with observations reinforce confidence in anthropogenic dominance. The answer balances progress and limitations, directly connecting both aspects to their impact on attribution confidence.
 5  
 The response comprehensively addresses both improvements in CMIP6 over CMIP5 (e.g., better historical temperature pattern replication, enhanced resolution, improved alignment with paleoclimate data) and persistent biases (e.g., high-latitude inaccuracies, aerosol forcing uncertainties, and unresolved challenges in modeling complex processes). It provides specific examples and contextualizes the limitations while affirming the role of anthropogenic factors. The answer is thorough, accurate, and directly relevant to the question, warranting the highest rating.
-
 5  
 The response accurately captures the key improvements in CMIP6 (e.g., resolution, historical pattern replication, paleoclimate alignment) and acknowledges persistent biases (high-latitude regions, aerosol forcing) as outlined in the detailed text. It succinctly addresses the question while aligning with the evidence provided, warranting a top rating.
